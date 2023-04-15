@@ -1,0 +1,29 @@
+.friendList {
+  padding-top: 20px;
+  list-style: none;
+  margin: 0;
+  margin-top: 30px;
+  display: flex;
+
+  gap: 10px;
+  background-color: rgb(109, 109, 108);
+  width: 350px;
+}
+.item {
+  background-color: rgb(223, 220, 216);
+
+  text-align: center;
+}
+.status-true {
+  width: 20px;
+  height: 20px;
+  display: block;
+  background-color: greenyellow;
+}
+
+.status-false {
+  width: 20px;
+  height: 20px;
+  display: block;
+  background-color: red;
+}
