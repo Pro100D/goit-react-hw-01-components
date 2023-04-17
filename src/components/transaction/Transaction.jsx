@@ -33,7 +33,7 @@ function Transaction({ transactionsArray }) {
   );
 }
 
-Transaction.PropTypes = {
+Transaction.propTypes = {
   transactionsArray: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -41,7 +41,7 @@ Transaction.PropTypes = {
       amount: PropTypes.number.isRequired,
       currency: PropTypes.string.isRequired,
     })
-  ),
+  ).isRequired,
 };
 
 export default Transaction;

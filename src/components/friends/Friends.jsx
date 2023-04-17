@@ -1,4 +1,5 @@
 import css from './Friends.module.css';
+import PropTypes from 'prop-types';
 
 export default function Friends({ friendsArray }) {
   return (
@@ -24,3 +25,13 @@ export default function Friends({ friendsArray }) {
     </ul>
   );
 }
+Friends.propTypes = {
+  friendsArray: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+    })
+  ).isRequired,
+};
