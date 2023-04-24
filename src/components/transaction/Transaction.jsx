@@ -3,33 +3,26 @@ import PropTypes from 'prop-types';
 
 function Transaction({ transactionsArray }) {
   return (
-    <>
-      {transactionsArray.map(transaction => {
-        return (
-          <table className={css.transactionHistory} key={transaction.id}>
-            <thead>
-              <tr className={css.trTable}>
-                <th className={css.tdTable}>Type</th>
-                <th className={css.tdTable}>Amount</th>
-                <th className={css.tdTable}>Currency</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className={css.trTable}>
-                <td className={css.tdTable}>{transaction.type}</td>
-                <td className={css.tdTable}>{transaction.amount}</td>
-                <td className={css.tdTable}>{transaction.currency}</td>
-              </tr>
-              <tr className={css.trTable}>
-                <td className={css.tdTable}>{transaction.type}</td>
-                <td className={css.tdTable}>{transaction.amount}</td>
-                <td className={css.tdTable}>{transaction.currency}</td>
-              </tr>
-            </tbody>
-          </table>
-        );
-      })}
-    </>
+    <table className={css.transactionHistory}>
+      <thead>
+        <tr className={css.trTable}>
+          <th className={css.tdTable}>Type</th>
+          <th className={css.tdTable}>Amount</th>
+          <th className={css.tdTable}>Currency</th>
+        </tr>
+      </thead>
+      <tbody>
+        {transactionsArray.map(transaction => {
+          return (
+            <tr className={css.trTable} key={transaction.id}>
+              <td className={css.tdTable}>{transaction.type}</td>
+              <td className={css.tdTable}>{transaction.amount}</td>
+              <td className={css.tdTable}>{transaction.currency}</td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
   );
 }
 
@@ -38,7 +31,7 @@ Transaction.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       type: PropTypes.string.isRequired,
-      amount: PropTypes.number.isRequired,
+      amount: PropTypes.string.isRequired,
       currency: PropTypes.string.isRequired,
     })
   ).isRequired,
